@@ -1,5 +1,3 @@
---GAME: https://www.roblox.com/games/3403279477/Creeper-Aw-man-2-15-Part-1
-
 local colors = {
     SchemeColor = Color3.fromRGB(0 ,255, 150),
     Background = Color3.fromRGB(20,20,20),
