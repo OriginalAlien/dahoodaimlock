@@ -10,7 +10,7 @@ local colors = {
 }
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Creeper? Aw man | Hack Pannel", colors)
+local Window = Library.CreateLib("Creeper? Aw man | Hack Panel -By Dreamer#5114", colors)
 
 local PP = Window:NewTab("Player")
 local SS = Window:NewTab("Stats")
@@ -225,6 +225,11 @@ extra2:NewButton("Get Building Tools", "", function()
     game:GetService("ReplicatedStorage").Btools:FireServer()
 end)
 
+extra2:NewButton("Get Happy Meal", "", function()
+    game:GetService("ReplicatedStorage").ItemGiveCollect:FireServer("HappyMeal")
+end)
+
+
 extra2:NewButton("Get Jeep", "", function()
     game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Jeep.Buy.Spawn:FireServer()
 end)
@@ -245,7 +250,7 @@ extra3:NewButton("Destroy All Blocks (Might Lag)", "", function()
     
 end)
 
-extra3:NewButton("Crash Server (Keep Clicking)", "(Lags Yourself Too, Keep Clicking Till Crash!)", function()
+extra3:NewButton("Crash Server (Keep Clicking)", "Lags Yourself Too, SAVE BEFORE CRASH", function()
     game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame1.PVP.HP:FireServer(math.huge, math.huge)
     wait(1)
     for i=0, 45000 do
