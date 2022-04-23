@@ -1,3 +1,6 @@
+--GAME: https://www.roblox.com/games/3403279477/Creeper-Aw-man-2-15-Part-1
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/OriginalAlien/robloxScript/main/creeperawman.lua"))()
+
 local colors = {
     SchemeColor = Color3.fromRGB(0 ,255, 150),
     Background = Color3.fromRGB(20,20,20),
@@ -211,8 +214,16 @@ extra:NewButton("Become Coffin", "", function()
     game:GetService("ReplicatedStorage").Coffin:FireServer()
 end)
 
+extra:NewButton("Get Grab Gun", "Use this gun to grab jeeps, creepers, ores, and unanchored stuff! NOT MADE BY ME", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/OriginalAlien/dahoodaimlock/main/telekinesisGun.lua"))()
+end)
+
 extra:NewButton("Get Building Tools", "", function()
     game:GetService("ReplicatedStorage").Btools:FireServer()
+end)
+
+extra:NewButton("Get Jeep", "", function()
+    game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Jeep.Buy.Spawn:FireServer()
 end)
 
 extra:NewButton("Destroy All Blocks (Might Lag)", "", function()
