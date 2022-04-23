@@ -215,12 +215,16 @@ teleport:NewButton("Teleport to Nether", "", function()
     game:GetService("ReplicatedStorage").NetherTP:FireServer()
 end)
 
-teleport:NewButton("Teleport ot DJ", "", function()
+teleport:NewButton("Teleport to DJ", "", function()
     game:GetService("ReplicatedStorage").DJ:FireServer()
 end)
 
 teleport:NewButton("Teleport to Spells Dealer", "", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-305.751099, 50.9499931, -173.756882, 0.0577276908, 5.81315773e-10, 0.998332381, -8.53164082e-08, 1, 4.35105907e-09, -0.998332381, -8.54253059e-08, 0.0577276908)
+end)
+
+teleport:NewButton("Teleport to Swamp", "", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(233, 13, 480)
 end)
 
 teleport:NewButton("Teleport to New Land", "", function()
