@@ -168,8 +168,19 @@ item2:NewButton("Give Rocket Fuel", "", function()
    game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Rocket.Buy.Give:FireServer()
 end)
 
-item2:NewButton("Give Cube Extract", "", function()
+item2:NewButton("Give Cube Extractor", "", function()
    game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Extract.Buy.Give:FireServer() 
+end)
+
+item2:NewButton("Give Cube", "EQUIP CUBE EXTRACTOR", function()
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Notification";
+        Text = "Equip Cube Extractor First";
+        Icon = ""; 
+        Duration = 15;
+    })
+
+   game:GetService("Workspace")[tostring(game.Players.LocalPlayer)].CubeExtractor.Give:FireServer()
 end)
 
 item2:NewButton("Give Ender Eye", "", function()
@@ -202,6 +213,10 @@ end)
 
 teleport:NewButton("Teleport to Nether", "", function()
     game:GetService("ReplicatedStorage").NetherTP:FireServer()
+end)
+
+teleport:NewButton("Teleport ot DJ", "", function()
+    game:GetService("ReplicatedStorage").DJ:FireServer()
 end)
 
 teleport:NewButton("Teleport to Spells Dealer", "", function()
@@ -249,6 +264,23 @@ end)
 
 extra2:NewButton("Get Jeep", "", function()
     game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Jeep.Buy.Spawn:FireServer()
+end)
+
+extra2:NewButton("Get Click TP Pearl", "", function()
+    game:GetService("ReplicatedStorage").ItemGiveCollect:FireServer("Orb")
+end)
+
+extra2:NewButton("Get Random Collectable Item (RARE)", "Check Inventory > Collectables", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.CrateShop.OmegaAstral.Buy.Buy:FireServer()
+end)
+
+extra2:NewButton("Get Random Collectable Item (COMMON)", "Check Inventory > Collectables", function()
+game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.CrateShop.Rare.Buy.Buy:FireServer()
+end)
+
+extra3:NewTextBox("Play Music ID", "", function(id)
+    local link = "rbxassetid://" ..tostring(id)
+    game:GetService("ReplicatedStorage").DJCHANGE:FireServer(link)
 end)
 
 extra3:NewButton("Destroy All Blocks (Might Lag)", "", function()
