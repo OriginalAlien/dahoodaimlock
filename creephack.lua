@@ -2,11 +2,11 @@
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/OriginalAlien/robloxScript/main/creeperawman.lua"))()
 
 local colors = {
-    SchemeColor = Color3.fromRGB(0 ,255, 150),
+    SchemeColor = Color3.fromRGB(128 ,0 , 128),
     Background = Color3.fromRGB(20,20,20),
     Header = Color3.fromRGB(10,10,10),
     TextColor = Color3.fromRGB(255,255,255),
-    ElementColor = Color3.fromRGB(15,15,15)
+    ElementColor = Color3.fromRGB(15, 15, 15)
 }
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
@@ -20,9 +20,12 @@ local EE = Window:NewTab("Extra")
 
 local player = PP:NewSection("Player")
 local stats = SS:NewSection("Stats")
+local stats2 = SS:NewSection("Badges")
 local item = II:NewSection("Items")
 local teleport = TT:NewSection("Teleports")
-local extra = EE:NewSection("Extra")
+local extra = EE:NewSection("Become")
+local extra2 = EE:NewSection("Get")
+local extra3 = EE:NewSection("Extra")
 
 local Workspace = game:GetService("Workspace")
 local Players = game.Players.LocalPlayer
@@ -100,11 +103,11 @@ stats:NewButton("Reset All Stats", "", function()
     end
 end)
 
-stats:NewButton("Get Rebirth Badge", "", function()
+stats2:NewButton("Get Rebirth Badge", "", function()
     game:GetService("ReplicatedStorage").REBIRTH:FireServer()
 end)
 
-stats:NewButton("Get Omega Rebirth Badge", "", function()
+stats2:NewButton("Get Omega Rebirth Badge", "", function()
     game:GetService("ReplicatedStorage").OMEGAREBIRTH:FireServer()
 end)
 
@@ -214,19 +217,19 @@ extra:NewButton("Become Coffin", "", function()
     game:GetService("ReplicatedStorage").Coffin:FireServer()
 end)
 
-extra:NewButton("Get Grab Gun", "Use this gun to grab jeeps, creepers, ores, and unanchored stuff! NOT MADE BY ME", function()
+extra2:NewButton("Get Grab Gun", "NOT MADE BY ME, Grabs Unanchored Stuff", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/OriginalAlien/dahoodaimlock/main/telekinesisGun.lua"))()
 end)
 
-extra:NewButton("Get Building Tools", "", function()
+extra2:NewButton("Get Building Tools", "", function()
     game:GetService("ReplicatedStorage").Btools:FireServer()
 end)
 
-extra:NewButton("Get Jeep", "", function()
+extra2:NewButton("Get Jeep", "", function()
     game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Jeep.Buy.Spawn:FireServer()
 end)
 
-extra:NewButton("Destroy All Blocks (Might Lag)", "", function()
+extra3:NewButton("Destroy All Blocks (Might Lag)", "", function()
     game:GetService("ReplicatedStorage").Btools:FireServer()
     wait(3)
     for i,v in pairs(game.Workspace.PlacedParts:GetChildren()) do
@@ -242,7 +245,7 @@ extra:NewButton("Destroy All Blocks (Might Lag)", "", function()
     
 end)
 
-extra:NewButton("Crash Server (Keep Clicking)", "(Lags Yourself Too, Keep Clicking Till Crash!)", function()
+extra3:NewButton("Crash Server (Keep Clicking)", "(Lags Yourself Too, Keep Clicking Till Crash!)", function()
     game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame1.PVP.HP:FireServer(math.huge, math.huge)
     wait(1)
     for i=0, 45000 do
