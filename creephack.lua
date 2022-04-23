@@ -22,6 +22,7 @@ local player = PP:NewSection("Player")
 local stats = SS:NewSection("Stats")
 local stats2 = SS:NewSection("Badges")
 local item = II:NewSection("Items")
+local item2 = II:NewSection("Key Items")
 local teleport = TT:NewSection("Teleports")
 local extra = EE:NewSection("Become")
 local extra2 = EE:NewSection("Get")
@@ -157,6 +158,22 @@ end)
 
 item:NewButton("Give Yourself Fart Gun", "", function()
    game:GetService("ReplicatedStorage").ItemGiveCollect:FireServer("FartGun") 
+end)
+
+item2:NewButton("Give Astral Fuel", "", function()
+    game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.AstralRocket.Buy.Give:FireServer()
+end)
+
+item2:NewButton("Give Rocket Fuel", "", function()
+   game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Rocket.Buy.Give:FireServer()
+end)
+
+item2:NewButton("Give Cube Extract", "", function()
+   game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Extract.Buy.Give:FireServer() 
+end)
+
+item2:NewButton("Give Ender Eye", "", function()
+   game:GetService("Players").LocalPlayer.PlayerGui.Crafting.Shop.MiscShop.Eye.Buy.Give:FireServer()
 end)
 
 --TELEPORT
